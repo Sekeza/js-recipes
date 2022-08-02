@@ -95,3 +95,65 @@ body {
 .container form #input:hover {
     border: 0.01rem solid #e94057;
 }
+
+.container form .fa-search {
+    margin-left: auto;
+}
+
+.container .trends h3 {
+    font-family:'Miniver', cursive;
+    font-size: 2.5rem;
+    color: #f27121;
+    text-align: center;
+    padding-top: 4rem;
+}
+
+.container .trends .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 2rem;
+}
+
+.container .trends .box-container .box {
+    background-color: #f5f5f5;
+    min-height: 30rem;
+    padding: 2rem;
+    margin-top: 3rem;
+    border-radius: 0.3rem;
+}
+
+.container .trends .box-container .box img {
+    height: 25rem;
+    width: 24rem;
+    overflow-x: hidden;
+    border-radius: 0.2rem;
+}
+
+.container .fruits h3 {
+    font-family:'Miniver', cursive;
+    font-size: 2.5rem;
+    color: #f27121;
+    text-align: center;
+    padding-top: 4rem;
+}
+
+.container .fruits .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+    gap: 2rem;
+}
+
+.container .fruits .box-container .box {
+    background-color: #f5f5f5;
+    min-height: 30rem;
+    padding: 2rem;
+    margin-top: 3rem;
+    border-radius: 0.3rem;
+}
+
+.container .fruits .box-container .box img {
+    height: 25rem;
+    width: 34rem;
+    overflow-x: hidden;
+    border-radius: 0.2rem;
+}
