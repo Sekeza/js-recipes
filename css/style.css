@@ -61,3 +61,37 @@ body {
     background-color: #f27121;
     color: #fff;
 }
+
+.container {
+    margin: 10rem auto;
+    /* margin-top: 10rem;
+    margin-bottom: 5rem; */
+}
+
+.container h1 {
+    font-family:'Miniver', cursive;
+    font-size: 4rem;
+    color: #fff;
+    text-align: center;
+}
+
+.container form {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.container form #input {
+    width: 100%;
+    height: 5rem;
+    padding: 1rem;
+    margin-top: 2rem;
+    font-size: 1.6rem;
+    color: #222;
+    background-color: #f9f9f9;
+    border-radius: 0.5rem;
+    box-shadow: inset 0 0 0.025rem 0.05rem;
+}
+
+.container form #input:hover {
+    border: 0.01rem solid #e94057;
+}
