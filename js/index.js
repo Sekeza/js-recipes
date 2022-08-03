@@ -8,7 +8,9 @@ const fruitImage = document.querySelector(".fruits .box-container .box img");
 const fruitName = document.querySelector(".fruits .box-container .box h5");
 
 const form = document.querySelector("form");
-const inputSearch = document.querySelector(".form #input");
+const inputSearch = document.querySelector(".form #input").value;
+
+const boxContainer = document.querySelector(".fruits .box-container .box img");
 
 form.addEventListener("submit", () => {
     inputSearch.addEventListener("blur/change/", () => {
@@ -94,7 +96,19 @@ const getSearch = async(searchName) => {
 const findMatches = (searchItem, searchList) => {
     searchList.filter(recipe => {
         return recipe.name.toLowerCase().includes(searchItem.toLowerCase());
-    })
+    });
+}
+
+const displaySearch = (inputSearch) => {
+    const matchList = findMatches(inputSearch, searchList);
+    const cardHtml = matchList.map(item => {
+        return `
+            <div class="box">
+                <img src={item.image} alt={item.name}>
+                <h5>{item.name}</h5>
+            </div>
+        `
+    }).join("");
 }
 
 
