@@ -91,4 +91,10 @@ const getSearch = async(searchName) => {
     searchList.push(...searchData);
 }
 
+const findMatches = (searchItem, searchList) => {
+    searchList.filter(recipe => {
+        return recipe.name.toLowerCase().includes(searchItem.toLowerCase());
+    })
+}
+
 
