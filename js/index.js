@@ -12,21 +12,13 @@ const form = document.querySelector("form");
 
 const boxContainer = document.querySelector(".fruits .box-container .box img");
 
-const options = {
-	method: 'GET',
-	headers: {
-		'X-RapidAPI-Key': '31df0a0b32mshbbe49ba067f1ad2p19236fjsn74d4a66078c8',
-		'X-RapidAPI-Host': 'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com'
-	}
-};
-
-
 
 // form.addEventListener("submit", () => {
 //     inputSearch.addEventListener("blur/change/", () => {
 
 //     });
 // });
+
 
 
 
@@ -41,16 +33,13 @@ const getTrends = async() => {
         JSON.parse(check);
     }
     else {
-        fetch('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?tags=vegetarian%2Cdessert&number=1', options)
-            .then(response => response.json())
-            .then(response => console.log(response))
-            .catch(err => console.error(err));
-        // const api = await fetch(`https://api.spoonacula.com/recipes/random?apikey=${process.env.RECIPE_API_KEY}&number=10`);
+        // const api = await fetch("https://api.spoonacular.com/recipes/complexSearch?query=pasta&maxFat=25&number=2");
+        const api = await fetch("https://api.spoonacular.com/recipes/random?apiKey=0685a694f3f54a7ea76bee81e370bd17&number=10", { method:"GET", headers: { "Content-Type": "application/json" }});
 
-        // const data1 = api.json();
+        const data1 = api.json();
 
-        // localStorage.setItem("fruits", JSON.stringify(data1));
-        // console.log(data1.recipes);
+        localStorage.setItem("fruits", JSON.stringify(data1));
+        console.log(data1);
         // trendsList.push(...data1);
 
     }
