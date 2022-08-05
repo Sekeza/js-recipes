@@ -67,62 +67,62 @@ const getTrends = async() => {
 getTrends();
 
 
-const fruitsList = [];
+// const fruitsList = [];
 
-// Get data from the api for trends
-const getFruits = async() => {
-    const check = localStorage.getItem("fruits");
-    if(check) {
-        JSON.parse(check);
-    }
-    else {
-        const api = await fetch(`https://api.spoonacula.com/recipes/random?apikey=${process.env.RECIPE_API_KEY}&number=10&tag=fruits`);
+// // Get data from the api for trends
+// const getFruits = async() => {
+//     const check = localStorage.getItem("fruits");
+//     if(check) {
+//         JSON.parse(check);
+//     }
+//     else {
+//         const api = await fetch(`https://api.spoonacula.com/recipes/random?apikey=${process.env.RECIPE_API_KEY}&number=10&tag=fruits`);
 
-        const data1 = api.json();
+//         const data1 = api.json();
 
-        localStorage.setItem("fruits", JSON.stringify(data1));
-        console.log(data1.recipes);
-        fruitsList.push(...data1);
-    }
+//         localStorage.setItem("fruits", JSON.stringify(data1));
+//         console.log(data1.recipes);
+//         fruitsList.push(...data1);
+//     }
 
     
-    fruitsList.map(recipe => {
-        return {
-           fruitImage: recipe.image, 
-           fruitName: recipe.title
-        }
-    });
-};
+//     fruitsList.map(recipe => {
+//         return {
+//            fruitImage: recipe.image, 
+//            fruitName: recipe.title
+//         }
+//     });
+// };
 
-getFruits();
+// getFruits();
 
-const searchList = [];
+// const searchList = [];
 
-const getSearch = async(searchName) => {
-    const api = await fetch(`https://api.spoonacula.com/recipes/complexSearch?apikey=${process.env.RECIPE_API_KEY}&number=10&name=${searchName}`);
+// const getSearch = async(searchName) => {
+//     const api = await fetch(`https://api.spoonacula.com/recipes/complexSearch?apikey=${process.env.RECIPE_API_KEY}&number=10&name=${searchName}`);
 
-    const searchData = api.json();
+//     const searchData = api.json();
 
-    console.log(searchData.recipes);
-    searchList.push(...searchData);
-}
+//     console.log(searchData.recipes);
+//     searchList.push(...searchData);
+// }
 
-const findMatches = (searchItem, searchList) => {
-    searchList.filter(recipe => {
-        return recipe.name.toLowerCase().includes(searchItem.toLowerCase());
-    });
-}
+// const findMatches = (searchItem, searchList) => {
+//     searchList.filter(recipe => {
+//         return recipe.name.toLowerCase().includes(searchItem.toLowerCase());
+//     });
+// }
 
-const displaySearch = (inputSearch) => {
-    const matchList = findMatches(inputSearch, searchList);
-    const cardHtml = matchList.map(item => {
-        return `
-            <div class="box">
-                <img src={item.image} alt={item.name}>
-                <h5>{item.name}</h5>
-            </div>
-        `
-    }).join("");
-}
+// const displaySearch = (inputSearch) => {
+//     const matchList = findMatches(inputSearch, searchList);
+//     const cardHtml = matchList.map(item => {
+//         return `
+//             <div class="box">
+//                 <img src={item.image} alt={item.name}>
+//                 <h5>{item.name}</h5>
+//             </div>
+//         `
+//     }).join("");
+// }
 
 
