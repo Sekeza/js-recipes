@@ -8,7 +8,7 @@ const fruitImage = document.querySelector(".fruits .box-container .box img");
 const fruitName = document.querySelector(".fruits .box-container .box h5");
 
 const form = document.querySelector("form");
-const inputSearch = document.querySelector(".form #input").value;
+// const inputSearch = document.querySelector(".form #input").value;
 
 const boxContainer = document.querySelector(".fruits .box-container .box img");
 
@@ -20,16 +20,13 @@ const options = {
 	}
 };
 
-fetch('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?tags=vegetarian%2Cdessert&number=1', options)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
 
-form.addEventListener("submit", () => {
-    inputSearch.addEventListener("blur/change/", () => {
 
-    });
-});
+// form.addEventListener("submit", () => {
+//     inputSearch.addEventListener("blur/change/", () => {
+
+//     });
+// });
 
 
 
@@ -44,23 +41,27 @@ const getTrends = async() => {
         JSON.parse(check);
     }
     else {
-        const api = await fetch(`https://api.spoonacula.com/recipes/random?apikey=${process.env.RECIPE_API_KEY}&number=10`);
+        fetch('https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/random?tags=vegetarian%2Cdessert&number=1', options)
+            .then(response => response.json())
+            .then(response => console.log(response))
+            .catch(err => console.error(err));
+        // const api = await fetch(`https://api.spoonacula.com/recipes/random?apikey=${process.env.RECIPE_API_KEY}&number=10`);
 
-        const data1 = api.json();
+        // const data1 = api.json();
 
-        localStorage.setItem("fruits", JSON.stringify(data1));
-        console.log(data1.recipes);
-        trendsList.push(...data1);
+        // localStorage.setItem("fruits", JSON.stringify(data1));
+        // console.log(data1.recipes);
+        // trendsList.push(...data1);
 
     }
     
 
-    trendsList.map(recipe => {
-        return {
-           image: recipe.image, 
-           h5: recipe.title
-        }
-    });
+    // trendsList.map(recipe => {
+    //     return {
+    //        image: recipe.image, 
+    //        h5: recipe.title
+    //     }
+    // });
 };
 
 getTrends();
