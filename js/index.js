@@ -1,3 +1,4 @@
+// import { RECIPE_API_KEY } from "../";
 
 console.log("working");
 // Selecting the elements
@@ -12,7 +13,7 @@ const form = document.querySelector("form");
 
 const boxContainer = document.querySelector(".fruits .box-container .box img");
 
-
+const apiKey = config.RECIPE_API_KEY;
 // form.addEventListener("submit", () => {
 //     inputSearch.addEventListener("blur/change/", () => {
 
@@ -33,7 +34,8 @@ const getTrends = async() => {
         JSON.parse(check);
     }
     else {
-        const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=0685a694f3f54a7ea76bee81e370bd17&number=10", { method:"GET", headers: { "Content-Type": "application/json" }});
+        const api = await fetch(`https://api.spoonacular.com/recipes/random?apiKey=${apiKey}&number=10`, { method:"GET", headers: { "Content-Type": "application/json" }});
+        // const api = await fetch("https://api.spoonacular.com/recipes/random?apiKey=0685a694f3f54a7ea76bee81e370bd17&number=10", { method:"GET", headers: { "Content-Type": "application/json" }});
 
         const data1 = api.json();
 
