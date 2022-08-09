@@ -9,7 +9,7 @@ const getTrends = async () => {
    
     try {
         let apiData1 = await fetch(url);
-        return apiData1.json();
+        return await apiData1.json();
     } catch (error) {
         console.log(error);
     }            
