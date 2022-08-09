@@ -131,7 +131,7 @@ body {
 
 .container .trends .box-container .box img {
     height: 25rem;
-    width: 24rem;
+    width: 100%;
     overflow-x: hidden;
     border-radius: 0.2rem;
 }
