@@ -3,24 +3,25 @@ console.log("working well");
 const trendsContainer = document.querySelector(".trends .box-container");
 console.log(trendsContainer);
 let trendsList = [];
-console.log(typeof trendsList);
+console.log(trendsList);
 
 // Get data from the api for trends
 const getTrends = async () => {
    
-    const api = await fetch("https://api.spoonacular.com/recipes/random?apiKey=0685a694f3f54a7ea76bee81e370bd17&number=10", { method:"GET", headers: { "Content-Type": "application/json" }});
-
-    const data1 = api.json();
-    console.log(data1);
-    // trendsList.push(...data1);
+    let api = await fetch("https://api.spoonacular.com/recipes/random?apiKey=0685a694f3f54a7ea76bee81e370bd17&number=10");
+   
+    let data1 = await api.json();
+    console.log(data1.recipes);
+    trendsList.push(...data1.recipes);
+    console.log(trendsList);
             
 };
 
-const displayTrendingRecipes = async () => {
+const displayTrendingRecipes =  () => {
     const trendRecipes = getTrends();
 
     let html = "";
-    trendRecipes.forEach(trend => {
+    trendRecipes.map(trend => {
         let divCard = `
             <div class="box">
                 <img src={trend.image} alt={trend.image}>
@@ -29,12 +30,11 @@ const displayTrendingRecipes = async () => {
         `;
 
         html += divCard;
-    })
-
+    });
+    trendsContainer.innerHTML = html;
 }
 
-trendsContainer.innerHTML = html;
-
+displayTrendingRecipes();
 
 
 
