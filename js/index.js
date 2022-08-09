@@ -15,8 +15,8 @@ const getTrends = async () => {
     }            
 };
 
-const displayTrendingRecipes =  () => {
-    let trendsList = getTrends();
+const displayTrendingRecipes = async () => {
+    let trendsList = await getTrends();
 
     let html = "";
     trendsList.forEach(trend => {
