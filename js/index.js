@@ -12,7 +12,7 @@ fetch("https://api.spoonacular.com/recipes/random?apiKey=0685a694f3f54a7ea76bee8
         result.recipes.map((item) => {
             html = `
             <div class="box">
-                <img src=${item.imageType} alt=${item.title} >
+                <img src=${item.image} alt=${item.title} >
                 <h5>${item.title}</h5>
             </div>
         `;
