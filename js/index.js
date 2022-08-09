@@ -2,36 +2,51 @@ console.log("working well");
 
 const trendsContainer = document.querySelector(".trends .box-container");
 
-// Get data from the api for trends
-const getTrends = async () => {
-   
-    let url = "https://api.spoonacular.com/recipes/random?apiKey=0685a694f3f54a7ea76bee81e370bd17&number=10";
-   
-    try {
-        let apiData1 = await fetch(url);
-        return await apiData1.json();
-    } catch (error) {
-        console.log(error);
-    }            
-};
-
-const displayTrendingRecipes = async () => {
-    let trendsList = await getTrends();
-
-    let html = "";
-    trendsList.forEach(trend => {
-        let divCard = `
+fetch("https://api.spoonacular.com/recipes/random?apiKey=0685a694f3f54a7ea76bee81e370bd17&number=10")
+    .then((data) => {
+        return data.json();
+    })
+    .then((result) => {
+        console.log(result.recipes);
+        let html = "";
+        result.recipes.map((item) => {
+            html = `
             <div class="box">
-                <img src={trend.image} alt={trend.image}>
-                <h5>{trend.title}</h5>
+                <img src=${item.imageType} alt=${item.title} >
+                <h5>${item.title}</h5>
             </div>
         `;
-        html += divCard;
-    });
-    trendsContainer.innerHTML = html;
-}
+        });
+        trendsContainer.innerHTML = html; 
+    })
+    .catch ((error) => {
+        console.log(error);
+    })
 
-displayTrendingRecipes();
+// Get data from the api for trends
+// const getTrends = async () => {
+   
+//     let url = "https://api.spoonacular.com/recipes/random?apiKey=0685a694f3f54a7ea76bee81e370bd17&number=10";
+   
+//     try {
+//         let apiData1 = await fetch(url);
+//         // console.log( apiData1.json());
+//         return await apiData1.json();
+//     } catch (error) {
+//         console.log(error);
+//     }            
+// };
+
+// // getTrends();
+
+// const displayTrendingRecipes = async () => {
+//     let trendsList = await getTrends();
+//     console.log(trendsList);
+
+// 
+
+
+// displayTrendingRecipes();
 
 
 
