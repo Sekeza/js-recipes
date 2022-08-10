@@ -26,6 +26,7 @@ html {
 body {
     background-color: #494949;
     padding: 2rem 6%;
+    padding-bottom: 0;
 }
 
 .header {
@@ -173,4 +174,22 @@ body {
     position: absolute;
     bottom: 5rem;
     transform: translate(120%, 0);
+}
+
+footer {
+    background-color: #e94057;
+    padding: 0;
+}
+
+footer p {
+    padding: 3rem 0;
+    margin-top: 3.5rem;
+    border-top: 0.1rem solid rgba(0, 255, 0, 0.2);
+    font-size: 2rem;
+    color: #222;
+    text-align: center;
+}
+
+footer p span {
+    color: #f27121;
 }
