@@ -1,6 +1,7 @@
 console.log("working well");
 
 const trendsContainer = document.querySelector(".trends .box-container");
+const fruitsContainer = document.querySelector(".fruits .box-container");
 
 // Get the trending recipes from API 
 fetch("https://api.spoonacular.com/recipes/random?apiKey=0685a694f3f54a7ea76bee81e370bd17&number=10")
