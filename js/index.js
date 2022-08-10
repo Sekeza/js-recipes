@@ -42,7 +42,7 @@ fetch("https://api.spoonacular.com/recipes/random?apiKey=0685a694f3f54a7ea76bee8
             </div>
         `;
         });
-        trendsContainer.innerHTML = fruitCard; 
+        fruitsContainer.innerHTML = fruitCard; 
     })
     .catch ((error) => {
         console.log(error);
