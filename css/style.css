@@ -100,7 +100,7 @@ body {
 }
 
 .container .trends h3 {
-    /* font-family:'Miniver', cursive; */
+    font-family:'Miniver', cursive;
     font-size: 2.5rem;
     color: #f27121;
     text-align: center;
@@ -125,6 +125,8 @@ body {
 
 .container .trends .box-container .box h5 {
     font-size: 1.5rem;
+    color: #fff;
+    background-color: linear-gradient(to right, rgba(0,0,0,0.3));
     text-align: center;
     position: absolute;
     bottom: 5rem;
@@ -172,10 +174,13 @@ body {
 
 .container .fruits .box-container .box h5 {
     font-size: 1.5rem;
+    color: #fff;
+    background-color: linear-gradient(to right, rgba(0,0,0,0.1));
     text-align: center;
     position: absolute;
     bottom: 5rem;
-    transform: translate(0%, 0%);
+    left: 0;
+    transform: translate(25%, 0%);
     overflow-x: hidden;
 }
 
