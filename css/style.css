@@ -190,13 +190,16 @@ body {
 
 footer {
     background-color: #e94057;
-    padding: 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 footer p {
-    padding: 3rem 0;
-    margin-top: 3.5rem;
-    border-top: 0.1rem solid rgba(0, 255, 0, 0.2);
+    padding-bottom: 3rem;
+    margin-top: 3rem;
+    /* border-top: 0.1rem solid rgba(0, 255, 0, 0.2); */
     font-size: 2rem;
     color: #222;
     text-align: center;
